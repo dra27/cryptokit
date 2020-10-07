@@ -1,0 +1,18 @@
+(executables
+ (modes byte exe)
+ (names prngtest test speedtest)
+ (libraries cryptokit))
+
+(rule
+ (alias runtest)
+ (deps
+  (:< test.exe))
+ (action
+  (run %{<})))
+
+(rule
+ (alias bench)
+ (deps
+  (:< speedtest.exe))
+ (action
+  (run %{<})))
